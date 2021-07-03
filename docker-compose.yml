@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: ./src/
+    image: lgro1991/api-produto:v11
+    # volumes:
+    #   - ./src/:/app/
+    ports:
+      - 8080:8080
+  mongo:
+    image: mongo:4.4.6
+    ports: 
+      - 27017:27017
+    environment: 
+      - MONGO_INITDB_ROOT_USERNAME=mongouser
+      - MONGO_INITDB_ROOT_PASSWORD=mongopwd
