@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: api-produto
-          image: lgro1991/api-produto
+          image: lgro1991/api-produto:latest
           ports:
             - containerPort: 8080
           # livenessProbe:
@@ -65,6 +65,6 @@ spec:
   scaleTargetRef:
     kind: Deployment
     name: api-produto
-  minReplicas: 1
+  minReplicas: 2
   maxReplicas: 10
   targetCPUUtilizationPercentage: 60
